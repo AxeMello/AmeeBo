@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <div class="header">
+        <h3> BOM Management</h3>
+        <a href="https://www.ameeriindustries.com/">
+            <p style="left: 10px;">Ameeri Industries</p>
+        </a>
+        <a href="https://www.ameeriindustries.com/ametech/">
+            <p style="right: 10px;">Ametech</p>
+        </a>
+    </div>
+</head>
+<body class="login-body" style="overflow: hidden;">
+    <img src="assets/ameeri-bldg.jpg" id="background">
+    <div class="login-container">
+        <h3>Login</h3>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('error');
+            
+            // Director credentials
+            if (username === "director" && password === "director123") {
+                window.location.href = "pages/home.html";
+                return false;
+            }
+            
+            // Manager credentials
+            else if (username === "manager" && password === "manager123") {
+                window.location.href = "pages/managerView.html";
+                return false;
+            }
+
+            // Store credentials
+            else if (username === "store" && password === "store123") {
+                window.location.href = "pages/storeView.html";
+                return false;
+            }
+
+            // Checker credentials
+            if (username === "checker" && password === "checker123") {
+                window.location.href = "pages/checkView.html";
+                return false;
+            }
+            
+            // Invalid credentials
+            else {
+                alert('invalid Username or Password!');
+                return false;
+            }
+        }
+    </script>
+</body>
+<footer class="footer">
+    <div>
+        <a href="https://axemello.github.io/portfolio/">
+            <p>axe_mello</p>    
+        </a>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Bill Order</title>
+    <link rel="stylesheet" href="../styles.css">
+    <div class="header">
+        <h3> BOM Management</h3>
+        <a href="https://www.ameeriindustries.com/">
+            <p style="left: 10px;">Ameeri Industries</p>
+        </a>
+        <a href="https://www.ameeriindustries.com/ametech/">
+            <p style="right: 10px;">Ametech</p>
+        </a>
+    </div>
+</head>
+<body>
+    <header>
+        <h1>Create New Bill Order</h1>
+    </header>
+    <a href="home.html">
+        <img src="..//assets/home.png" class="homeicon">
+        <img src="..//assets/back.png" class="backicon">
+    </a>
+    <form id="billOrderForm">
+        <div class="form-inline">
+            <label for="panelNumber">Panel_Number:</label>
+            <input type="text" class="panelNumber" name="panelNumber" required style="width: 56%;">
+            <label for="orderDate"style='padding-left: 700px;'>Date:</label>
+            <input type="date" class="orderDate" name="orderDate" required style="width: 56%;">
+        </div>
+
+        <table id="orderTable">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">Sl No.</th>
+                    <th>Description</th>
+                    <th style="width: 10%;">Current</th>
+                    <th style="width: 5%;">Quantity</th>
+                    <th>Order Description</th>
+                    <th>Remarks</th>
+                    <th style="width: 5%;">Accessories</th>
+                    <th style="width: 5%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="order-row" data-category="ACB">
+                    <td style="text-align: center;">1</td>
+                    <td><input type="text" name="description" value="ACB 1"></td>
+                    <td><input type="number" name="current" min="3"></td>
+                    <td><input type="number" name="quantity" min="1"></td>
+                    <td><input type="text" name="orderDescription"></td>
+                    <td><input type="text" name="remarks"></td>
+                    <td style="padding: 0px 15px 0px 15px;">
+                        <select name="accessories" class="accessories" style="height:35px; width: 80px;">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button" class="add-row"> + </button>
+                        <button type="button" class="close-row"> - </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="submit">Finish</button>
+    </form>
+    <script src="../scripts/newOrder.js"></script>
+</body>
+<footer class="footer">
+    <div>
+        <a href="https://axemello.github.io/portfolio/">
+            <p>axe_mello</p>    
+        </a>
+    </div>
+</footer>
+</html>
